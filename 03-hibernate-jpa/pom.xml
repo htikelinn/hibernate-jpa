@@ -48,5 +48,7 @@
 
 		<module>00-test-servlet</module>
 		<module>05-inherient.mappings</module>
+
+		<module>06-entitymanager</module>
 	</modules>
 </project>
