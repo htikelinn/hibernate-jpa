@@ -6,9 +6,9 @@
 			<property name="javax.persistence.jdbc.user" value="testUser"/>
 			<property name="javax.persistence.jdbc.password" value="testPass"/>
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-			<property name="hibernae.show_sql" value="true"/>
+			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306:testDb"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.17.0.2:3306/testDb"/>
 		</properties>
 	</persistence-unit>
 </persistence>
