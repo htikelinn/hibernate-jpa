@@ -37,9 +37,11 @@ public class Category {
 	@Column(columnDefinition = "boolean default true")
 	private Boolean active;
 	@OneToMany(mappedBy = "category",
-			//orphanRemoval = true,
-			cascade = CascadeType.PERSIST) //to remove child list
+			//orphanRemoval = true, //to remove child list and parient list
+			cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) //to remove only child list
 	private List<Product> products = new ArrayList<Product>();
+	
+	
 	// This is hyper method
 	public void addProduct(Product...ps) { //... var @ sign, last parameter
 		for (Product p :ps) {

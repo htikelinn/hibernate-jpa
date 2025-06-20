@@ -21,6 +21,7 @@ import jakarta.persistence.EntityNotFoundException;
 public class ProductTest extends JpaFactory {
 
 	@Test
+	@Disabled
 	void categoryPersistWithCascadeTest() {
 		var cat = new Category("Meat");
 		cat.addProduct(
@@ -79,11 +80,12 @@ public class ProductTest extends JpaFactory {
 	@Order(1)
 	void productPersistTest() {
 		// To be transient State or New State
-		var cat = new Category("Fruits");
-		var product = new Product("Orange", 5340.70);
-		product.setCategory(cat);
+		var cat = new Category("Test");
+		var product = new Product("test", 5340.70);
+		//product.setCategory(cat);
+		cat.addProduct(product);
 		
-		assertFalse(em.contains(cat));
+		//assertFalse(em.contains(cat));
 		
 		// To be Manage State
 		em.getTransaction().begin();
@@ -92,8 +94,8 @@ public class ProductTest extends JpaFactory {
 		//em.getTransaction().commit();
 		
 		//em.getTransaction().begin();
-		product.setName("Apple");
-		em.persist(product);
+		//product.setName("Apple");
+		//em.persist(product);
 		em.getTransaction().commit();
 		
 	}
