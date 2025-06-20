@@ -4,11 +4,13 @@ import org.hibernate.annotations.DynamicInsert;
 
 import com.jdc.mkt.listeners.EnableTimesEntity;
 import com.jdc.mkt.listeners.Times;
+import com.jdc.mkt.listeners.TimesListener;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 @DynamicInsert //insert values if have values
 @RequiredArgsConstructor
 @NoArgsConstructor
+@EntityListeners(TimesListener.class)
 public class Product implements EnableTimesEntity {
 
 	@Id
